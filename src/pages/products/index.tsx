@@ -1,20 +1,19 @@
 import Card from "@components/common/card";
-import Layout from "@components/layouts/admin";
 import Search from "@components/common/search";
+import { ArrowDown } from "@components/icons/arrow-down";
+import { ArrowUp } from "@components/icons/arrow-up";
+import Layout from "@components/layouts/admin";
+import CategoryTypeFilter from "@components/product/category-type-filter";
 import ProductList from "@components/product/product-list";
 import ErrorMessage from "@components/ui/error-message";
 import Loader from "@components/ui/loader/loader";
-import { SortOrder } from "@ts-types/generated";
-import { useState } from "react";
 import { useProductsQuery } from "@data/product/products.query";
+import { SortOrder } from "@ts-types/generated";
+import { adminOnly } from "@utils/auth-utils";
+import cn from "classnames";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import SortForm from "@components/common/sort-form";
-import CategoryTypeFilter from "@components/product/category-type-filter";
-import cn from "classnames";
-import { ArrowDown } from "@components/icons/arrow-down";
-import { ArrowUp } from "@components/icons/arrow-up";
-import {adminOnly} from "@utils/auth-utils";
+import { useState } from "react";
 
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
