@@ -1,17 +1,19 @@
 export { AttributeIcon } from "@components/icons/sidebar/attribute";
 export { AttributeValueIcon } from "@components/icons/sidebar/attribute-value";
+export { BlogsIcon } from "@components/icons/sidebar/blogs";
 export { CategoriesIcon } from "@components/icons/sidebar/categories";
 export { CouponsIcon } from "@components/icons/sidebar/coupons";
-export { OrdersIcon } from "@components/icons/sidebar/orders";
-export { OrdersStatusIcon } from "@components/icons/sidebar/order-status";
-export { ProductsIcon } from "@components/icons/sidebar/products";
 export { DashboardIcon } from "@components/icons/sidebar/dashboard";
-export { SettingsIcon } from "@components/icons/sidebar/settings";
-export { ShopIcon } from "@components/icons/sidebar/shop";
 export { MyShopIcon } from "@components/icons/sidebar/my-shop";
+export { OrdersStatusIcon } from "@components/icons/sidebar/order-status";
+export { OrdersIcon } from "@components/icons/sidebar/orders";
+export { ProductsIcon } from "@components/icons/sidebar/products";
+export { SettingsIcon } from "@components/icons/sidebar/settings";
+export { ShippingsIcon } from "@components/icons/sidebar/shippings";
+export { ShopIcon } from "@components/icons/sidebar/shop";
 export { TagIcon } from "@components/icons/sidebar/tags";
+export { TaxesIcon } from "@components/icons/sidebar/taxes";
 export { TypesIcon } from "@components/icons/sidebar/types";
 export { UsersIcon } from "@components/icons/sidebar/users";
-export { ShippingsIcon } from "@components/icons/sidebar/shippings";
 export { WithdrawIcon } from "@components/icons/sidebar/withdraw";
-export { TaxesIcon } from "@components/icons/sidebar/taxes";
+
