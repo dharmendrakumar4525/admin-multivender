@@ -43,6 +43,7 @@ export type ProductsQueryOptionsType = {
   text?: string;
   type?: string;
   category?: string;
+  stock?: string;
   status?: string;
   limit?: number;
   orderBy?: string;

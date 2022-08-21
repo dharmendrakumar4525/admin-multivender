@@ -9,8 +9,8 @@ type Props = {
 
 export default function Filter({ onStatusFilter, className, }: Props) {
 	const statusList = [
-		{ label: 'Active', value: 'active' },
-		{ label: 'Inactive', value: 'inactive' },
+		{ label: 'Active', value: '1' },
+		{ label: 'Inactive', value: '0' },
 	]
 
 	return (

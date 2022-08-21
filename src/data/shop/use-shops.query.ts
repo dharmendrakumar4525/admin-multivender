@@ -20,7 +20,7 @@ const fetchShops = async ({
 	} = params as ShopsQueryOptionsType;
 	const searchString = stringifySearchQuery({
 		name: text,
-		is_active: status === "active" ? 1 : 0,
+		is_active: status,
 	});
 	const url = `${API_ENDPOINTS.SHOPS}?search=${searchString}&searchJoin=and&limit=${limit}&page=${page}&orderBy=${orderBy}&sortedBy=${sortedBy}`;
 	const {
