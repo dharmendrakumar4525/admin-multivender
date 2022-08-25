@@ -20,6 +20,9 @@ const CouponDeleteView = dynamic(
 const ProductDeleteView = dynamic(
   () => import("@components/product/product-delete-view")
 );
+const BlogDeleteView = dynamic(
+  () => import("@components/blogs/blog-delete-view")
+);
 const TypeDeleteView = dynamic(
   () => import("@components/brand/brand-delete-view")
 );
@@ -51,6 +54,7 @@ const ManagedModal = () => {
   return (
     <Modal open={isOpen} onClose={closeModal}>
       {view === "DELETE_PRODUCT" && <ProductDeleteView />}
+      {view === "DELETE_BLOG" && <BlogDeleteView />}
       {view === "DELETE_TYPE" && <TypeDeleteView />}
       {view === "DELETE_ATTRIBUTE" && <AttributeDeleteView />}
       {view === "DELETE_CATEGORY" && <CategoryDeleteView />}

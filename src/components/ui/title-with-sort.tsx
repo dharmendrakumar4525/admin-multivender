@@ -1,6 +1,6 @@
-import cn from "classnames";
 import { TriangleArrowDown } from "@components/icons/triangle-arrow-down";
 import { TriangleArrowUp } from "@components/icons/triangle-arrow-up";
+import cn from "classnames";
 
 type Props = {
   title: string | React.ReactNode;
@@ -9,7 +9,6 @@ type Props = {
 };
 
 const TitleWithSort = ({ title, ascending, isActive = true }: Props) => {
-  console.log(ascending);
 
   return (
     <span className="inline-flex items-center">

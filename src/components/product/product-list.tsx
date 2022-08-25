@@ -1,22 +1,23 @@
-import Pagination from "@components/ui/pagination";
-import Image from "next/image";
-import { Table } from "@components/ui/table";
 import ActionButtons from "@components/common/action-buttons";
-import { siteSettings } from "@settings/site.settings";
-import usePrice from "@utils/use-price";
 import Badge from "@components/ui/badge/badge";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import Pagination from "@components/ui/pagination";
+import { Table } from "@components/ui/table";
+import TitleWithSort from "@components/ui/title-with-sort";
+import { siteSettings } from "@settings/site.settings";
 import {
 	Product,
 	ProductPaginator,
 	ProductType,
 	Shop,
-	SortOrder,
+	SortOrder
 } from "@ts-types/generated";
 import { useIsRTL } from "@utils/locals";
+import usePrice from "@utils/use-price";
+import moment from "moment";
+import { useTranslation } from "next-i18next";
+import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
-import TitleWithSort from "@components/ui/title-with-sort";
 
 export type IProps = {
 	products?: ProductPaginator;
@@ -199,6 +200,16 @@ const ProductList = ({ products, onPagination, onSort, onOrder }: IProps) => {
 							: "bg-accent"
 					}
 				/>
+			),
+		},
+		{
+			title: "Published At",
+			dataIndex: "created_at",
+			key: "created_at",
+			align: "center",
+			width: 120,
+			render: (created_at: string) => (
+				<span>{moment(created_at).format('ll')}</span>
 			),
 		},
 		{

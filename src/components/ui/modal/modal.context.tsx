@@ -2,6 +2,7 @@ import React from "react";
 
 type MODAL_VIEWS =
   | "DELETE_PRODUCT"
+  | "DELETE_BLOG"
   | "DELETE_TYPE"
   | "DELETE_ATTRIBUTE"
   | "DELETE_CATEGORY"

@@ -21,6 +21,7 @@ export type TagsQueryOptionsType = {
 };
 export type ShopsQueryOptionsType = {
   text?: string;
+  status?: string;
   page?: number;
   parent?: number | null;
   limit?: number;
@@ -42,6 +43,7 @@ export type ProductsQueryOptionsType = {
   text?: string;
   type?: string;
   category?: string;
+  stock?: string;
   status?: string;
   limit?: number;
   orderBy?: string;
