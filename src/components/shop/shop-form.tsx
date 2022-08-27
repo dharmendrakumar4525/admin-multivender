@@ -4,6 +4,7 @@ import * as socialIcons from "@components/icons/social";
 import Button from "@components/ui/button";
 import Description from "@components/ui/description";
 import FileInput from "@components/ui/file-input";
+import ValidationError from "@components/ui/form-validation-error";
 import Input from "@components/ui/input";
 import Label from "@components/ui/label";
 import SelectInput from "@components/ui/select-input";
@@ -59,8 +60,18 @@ export const updatedIcons = socialIcon.map((item: any) => {
 	return item;
 });
 
+export const statusOptions = [
+	{ name: 'Approved', value: 'approved' },
+	{ name: 'Rejected', value: 'rejected' },
+	{ name: 'On Hold', value: 'on_hold' },
+	{ name: 'Pending', value: 'pending' },
+	{ name: 'Review', value: 'review' },
+	{ name: 'Trash', value: 'trash' },
+]
+
 type FormValues = {
 	name: string;
+	status: string;
 	gst: string;
 	pan: string;
 	description: string;
@@ -130,6 +141,8 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
 					id: initialValues.id,
 					input: {
 						...values,
+						// @ts-ignore
+						status: values?.status?.value,
 						address: restAddress,
 						settings,
 						balance: {
@@ -145,6 +158,8 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
 				variables: {
 					input: {
 						...values,
+						// @ts-ignore
+						status: values?.status?.value,
 						settings,
 						balance: {
 							...values.balance,
@@ -162,6 +177,8 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
 			<span className="font-bold">1170 x 435{t("common:text-px")}</span>
 		</span>
 	);
+
+
 
 	return (
 		<>
@@ -228,6 +245,20 @@ const ShopForm = ({ initialValues }: { initialValues?: any }) => {
 							className="mb-5"
 							error={t(errors.name?.message!)}
 						/>
+
+						<div className="mb-5">
+							<Label>Select Status</Label>
+							<SelectInput
+								name="status"
+								control={control}
+								getOptionLabel={(option: any) => option.name}
+								getOptionValue={(option: any) => option.value}
+								options={statusOptions}
+							/>
+
+							<ValidationError message={errors.status?.message} />
+						</div>
+
 						<Input
 							label="GST Number"
 							{...register("gst")}

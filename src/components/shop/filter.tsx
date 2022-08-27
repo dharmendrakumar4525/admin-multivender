@@ -1,6 +1,7 @@
 import Label from "@components/ui/label";
 import Select from "@components/ui/select/select";
 import cn from "classnames";
+import { statusOptions } from "./shop-form";
 
 type Props = {
 	onStatusFilter: Function;
@@ -8,10 +9,6 @@ type Props = {
 };
 
 export default function Filter({ onStatusFilter, className, }: Props) {
-	const statusList = [
-		{ label: 'Active', value: '1' },
-		{ label: 'Inactive', value: '0' },
-	]
 
 	return (
 		<div
@@ -23,8 +20,8 @@ export default function Filter({ onStatusFilter, className, }: Props) {
 			<div className="w-full">
 				<Label>Filter by Status</Label>
 				<Select
-					options={statusList}
-					getOptionLabel={(option: any) => option.label}
+					options={statusOptions}
+					getOptionLabel={(option: any) => option.name}
 					getOptionValue={(option: any) => option.value}
 					placeholder="Filter by Status"
 					// isLoading={categoryLoading}
